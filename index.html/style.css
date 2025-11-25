@@ -1,0 +1,25 @@
+/* Add this to your styles.css or any linked CSS file */
+
+/* Keyframes for gradient animation */
+@keyframes gradientAnimation {
+    0% {
+      background: linear-gradient(45deg, #0ea5e9, #2563eb);
+    }
+    50% {
+      background: linear-gradient(45deg, #2563eb, #3b82f6);
+    }
+    100% {
+      background: linear-gradient(45deg, #0ea5e9, #2563eb);
+    }
+  }
+  
+  /* Apply the gradient animation to your landing page or a specific section */
+  .landing {
+    animation: gradientAnimation 10s ease infinite;
+    background-size: 400% 400%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

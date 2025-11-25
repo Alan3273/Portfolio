@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animated Card with Framer Motion</title>
+
+  <!-- Link to your CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Framer Motion via CDN -->
+  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+</head>
+<body>
+
+  <div class="card" id="animatedCard">
+    <h2>Hello Bruh 👋</h2>
+    <p>This is a cool animated card!</p>
+    <button class="cool-button">Click Me!</button>
+  </div>
+
+  <script>
+    const { motion } = window['framer-motion'];
+
+    const card = document.getElementById('animatedCard');
+
+    // Animate on load
+    motion.animate(card, { opacity: [0, 1], scale: [0.8, 1] }, { duration: 1 });
+
+    // Add hover animation
+    card.addEventListener('mouseenter', () => {
+      motion.animate(card, { scale: 1.05 }, { duration: 0.3 });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      motion.animate(card, { scale: 1 }, { duration: 0.3 });
+    });
+
+    // Button click animation
+    const button = document.querySelector('.cool-button');
+    button.addEventListener('click', () => {
+      motion.animate(button, { scale: [1, 1.2, 1] }, { duration: 0.5 });
+    });
+  </script>
+
+</body>
+</html>
