@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vinay's Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #1f2937;
+            --accent: #38bdf8;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2b2d42, #8d99ae);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        nav {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: white;
+            text-shadow: 0 0 5px var(--accent);
+        }
+
+        .landing {
+            height: 100vh;
+            background: linear-gradient(120deg, #0ea5e9, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .landing h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .landing button {
+            margin-top: 20px;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: var(--border-radius);
+            background-color: white;
+            color: #1e3a8a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .landing button:hover {
+            background-color: #e0e7ff;
+            transform: scale(1.05);
+        }
+
+        #portfolio {
+            display: none;
+            animation: fadeInMain 1s ease-in-out;
+        }
+
+        .intro-slide {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            padding: 4rem 2rem;
+            background-color: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .intro-left img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 900px;
+            margin: auto;
+            background-color: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.03);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+            margin-top: 2rem;
+            border-top: 2px solid var(--accent);
+        }
+
+        /* BACK TO TOP BUTTON */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        @keyframes fadeInMain { from { opacity: 0; transform: scaleY(0.98); } to { opacity: 1; transform: scaleY(1); } }
+    </style>
+</head>
+
+<body>
+
+    <!-- Landing Page -->
+    <div class="landing">
+        <h1>Welcome to Vinay's Portfolio</h1>
+        <p>Ready to explore?</p>
+        <button onclick="document.querySelector('.landing').style.display='none'; document.getElementById('portfolio').style.display='block';">Let's Get Started</button>
+    </div>
+
+    <!-- Main Portfolio -->
+    <div id="portfolio">
+
+        <nav>
+            <a href="#intro">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#internship">Internship</a>
+            <a href="#education">Education</a>
+            <a href="#resume">Resume</a>
+        </nav>
+
+        <!-- Intro Section -->
+        <section id="intro" class="intro-slide">
+            <div class="intro-left">
+                <img src="IMG_20250421_201103.jpg" alt="Vinay">
+            </div>
+            <div class="intro-right">
+                <h2>About Me</h2>
+                <p>I'm Bodanapati Vinay... (your entire description remains the same)</p>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="project">
+                <strong>Game AI Agent (Chess & Dota 2)</strong>
+                <p>Built an AI agent using MCTS + RL...</p>
+                <img src="Robot_Hand_And_Pawn.png" width="350">
+                <a href="https://github.com/Alan3273/Game-Ai-development---CHESS" target="_blank">GitHub Repo</a>
+            </div>
+
+            <div class="project">
+                <strong>Code-Switching NLP Model</strong>
+                <p>NLP model for Indian languages with CNN, BLSTM...</p>
+                <img src="NLP.png" width="350">
+                <a href="https://github.com/Alan3273/Code-switching-Data-set" target="_blank">GitHub Repo</a>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills</h2>
+
+            <div class="skills-grid">
+                <div class="skill-item"><img src="C++.png"></div>
+                <div class="skill-item"><img src="images.png"></div>
+                <div class="skill-item"><img src="Features_Of_Python_1_f4ccd6d9f7.jpg"></div>
+                <div class="skill-item"><img src="rendering-file-javascript-coding-png.webp"></div>
+                <div class="skill-item"><img src="360_F_223730334_0l31O1JBvtyw2B8Zkeu95LEqX0Y3PxjG.jpg"></div>
+                <div class="skill-item"><img src="css-tutorial-img1-01.o-1.png"></div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+
+            <img src="DSA certificate.jpg" width="300">
+            <img src="Cpp certificate.jpg" width="300">
+            <img src="dynamic programing.jpg" width="300">
+            <img src="Approximation Algorithms.jpg" width="300">
+        </section>
+
+        <!-- Internship -->
+        <section id="internship">
+            <h2>Internship</h2>
+            <img src="HVAC.png" width="350">
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <img src="LPU.jpg" width="60">
+            <img src="SGP.jpeg" width="60">
+            <img src="SCHOOL.jpg" width="60">
+        </section>
+
+        <!-- Resume -->
+        <section id="resume">
+            <h2>Resume</h2>
+            <a href="resume.pdf" download style="color: var(--accent); font-weight: bold;">📄 Download My Resume (PDF)</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Bodanapati Vinay</p>
+        </footer>
+    </div>
+
+    <!-- Back To Top Button -->
+    <button id="backToTop">↑</button>
+
+    <script>
+        document.getElementById("backToTop").onclick = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+
+</body>
+</html>
