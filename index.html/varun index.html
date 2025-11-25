@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varun Doddi Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #f5f7fa;
+      --bg-secondary: #ffffff;
+      --accent: #6c63ff;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-main);
+      scroll-behavior: smooth;
+      line-height: 1.7;
+    }
+
+    .landing {
+      height: 100vh;
+      background: linear-gradient(120deg, #6c63ff, #a78bfa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      animation: fadeInSlide 1s ease-in-out;
+    }
+    .landing button {
+      margin-top: 20px;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      background-color: white;
+      color: #6c63ff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .landing button:hover {
+      background-color: #ede9fe;
+      transform: translateY(-2px);
+    }
+
+    #portfolio {
+      display: none;
+      animation: zoomFade 0.7s ease-in-out;
+    }
+
+    header {
+      background: var(--bg-secondary);
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    }
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid var(--accent);
+    }
+    .contact-box {
+      background: #f3f4f6;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .contact-box p {
+      margin: 0.3rem 0;
+    }
+    .contact-box a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: var(--bg-secondary);
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+      animation: slideInUp 1s ease;
+    }
+
+    h2 {
+      border-left: 5px solid var(--accent);
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .project, .cert, .edu, .skill {
+      margin-bottom: 1.5rem;
+    }
+    a {
+      color: var(--accent);
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #e5e7eb;
+      color: var(--text-muted);
+      margin-top: 2rem;
+    }
+
+    @keyframes fadeInSlide {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes zoomFade {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="landing">
+    <h1>Welcome to Varun Doddi's Portfolio</h1>
+    <p>Explore my projects, skills & experience.</p>
+    <button onclick="document.querySelector('.landing').style.display='none'; document.getElementById('portfolio').style.display='block';">Let's Get Started</button>
+  </div>
+
+  <div id="portfolio">
+    <header>
+      <img src="profile.jpg" alt="Varun Doddi" class="profile-pic">
+      <h1>Varun Doddi</h1>
+      <p>AI & Robotics Enthusiast | CSE @ LPU</p>
+      <div class="contact-box">
+        <p><strong>📧 Email:</strong> varundoddi06@gmail.com</p>
+        <p><strong>📞 Phone:</strong> 7889048661</p>
+        <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/varundoddi08" target="_blank">varundoddi08</a></p>
+        <p><strong>💻 GitHub:</strong> <a href="https://github.com/Varun12221223" target="_blank">Varun12221223</a></p>
+      </div>
+    </header>
+
+    <section>
+      <h2>About Me</h2>
+      <p>I'm a Computer Science Engineering student passionate about robotics, AI, and smart systems. I'm driven by the idea of solving real-world challenges through intelligent technologies. Experienced in Q-learning, NLP, and full-stack development.</p>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="project">
+        <strong>🤖 Roboarm Pick and Place Using Q-Learning</strong>
+        <p>Q-table-based intelligent robotic arm for pick-and-place operations. Enables autonomous learning and real-world decision-making.</p>
+        <a href="https://github.com/Varun12221223/Roboarm-Pick-and-Place-Using-Q-Learning" target="_blank">View Project</a>
+      </div>
+      <div class="project">
+        <strong>🌐 Language Identification with Code-Switching</strong>
+        <p>Comparison of N-gram, SVM, CNN & BLSTM for classifying Indian multilingual datasets.</p>
+        <a href="https://github.com/Alan3273/Code-switching-Data-set" target="_blank">View Project</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skill">Languages: C++, Java, C, Python, HTML, CSS, JavaScript</div>
+      <div class="skill">Frameworks: NumPy, Pandas, MySQL, MS Excel</div>
+      <div class="skill">Expertise: DSA, Problem Solving, Scripting, Responsive Design</div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <div class="cert">
+        <strong>DSA Using Java</strong><br>
+        <a href="https://www.geeksforgeeks.org/certificate/7a5ad5fc71012282ce5d8c69a6b8f586" target="_blank">GeeksforGeeks Certificate</a>
+      </div>
+      <div class="cert">
+        <strong>Cloud Computing</strong><br>
+        <a href="https://archive.nptel.ac.in/noc/B2C/candidate_login/candidate_scores.php?courseid=noc24-cs118" target="_blank">NPTEL Certificate</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Internship</h2>
+      <p><strong>GeeksforGeeks - DSA Using Java (May 2024 – Sep 2024)</strong><br>
+      Completed a structured and comprehensive self-paced internship focusing on Data Structures and Algorithms in Java, with assessments and real-world problem-solving exposure.</p>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="edu">
+        <strong>Lovely Professional University</strong><br>
+        B.Tech CSE – 2022 to 2026 | CGPA: 9.23
+      </div>
+      <div class="edu">
+        <strong>Delhi Public School, Warangal</strong><br>
+        12th Science – 81%
+      </div>
+      <div class="edu">
+        <strong>Carmel Convent High School, Mancherial</strong><br>
+        10th with Science
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Varun Doddi. Built with ❤️ using HTML + CSS</p>
+    </footer>
+  </div>
+</body>
+</html>
